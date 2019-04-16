@@ -4,7 +4,7 @@ Travis Ci scripts to push changes to specific branch for using with Unity Packag
 
 ## How Unity Package Manager works with git
 
-There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://forum.unity.com/threads/git-support-on-package-manager.573673/) `git` dependencies in it like this
+There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://docs.unity3d.com/Manual/upm-dependencies.html) `git` dependencies in it like this
 ```
 "com.company.repo.name": "https://YourGitHost.com/UserName/RepoName.git#BranchName"
 ```
@@ -24,15 +24,15 @@ This repo will help you set up CI for separate UPM branch
 2. In your default branch create `package.json` near your main folder (but inside `Assets`!) with keywords and category of your choice:
 ```
 {
-    "name": "com.company.repo.name",
-    "displayName": "Display Name of Your Asset",
-    "version": "0.1.1",
-    "unity": "2018.3",
-    "description": "Short description of your asset",
-    "keywords": [
-        "unity", "editor"		
-    ],
-    "category": "Instrument"
+	"name": "com.company.repo.name",
+	"displayName": "Display Name of Your Asset",
+	"version": "0.1.1",
+	"unity": "2018.3",
+	"description": "Short description of your asset",
+	"keywords": [
+		"unity", "editor"		
+	],
+	"category": "Instrument"
 }
 ```
 3. Create `com.company.repo.name.asmdef` in the same folder:
