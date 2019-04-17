@@ -1,8 +1,12 @@
 # unity-package-manager-ci
+![](https://img.shields.io/badge/%20-Unity-blue.svg)
+![](https://img.shields.io/badge/%20-Unity%20Package%20Manager-blue.svg)
+![](https://img.shields.io/badge/%20-Travis%20Ci-blue.svg?logo=travis)
 
 Travis Ci scripts to push changes to specific branch for using with Unity Package Manager (UPM) system
 
 ## How Unity Package Manager works with git
+
 
 There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://docs.unity3d.com/Manual/upm-dependencies.html) `git` dependencies in it like this
 ```
