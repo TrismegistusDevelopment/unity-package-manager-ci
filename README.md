@@ -7,7 +7,7 @@ Travis Ci scripts to push changes to specific branch for using with Unity Packag
 ## How Unity Package Manager works with git
 
 
-There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://docs.unity3d.com/Manual/upm-dependencies.html) `git` dependencies in it like this
+There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://docs.unity3d.com/Manual/upm-dependencies.html#Git) `git` dependencies in it like this
 ```
 "com.company.repo.name": "https://YourGitHost.com/UserName/RepoName.git#BranchName"
 ```
