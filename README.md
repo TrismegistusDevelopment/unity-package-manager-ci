@@ -11,7 +11,7 @@ There's `Packages/manifest.json` in your Unity project folder. You can [manually
 ```
 "com.company.repo.name": "https://YourGitHost.com/UserName/RepoName.git#BranchName"
 ```
-To update asset through UPM uoy musc delete reference in `lock` section in manifest.
+To update asset through UPM you must delete reference in `lock` section in manifest.
 
 Currently you must follow strict rules if you want to use your asset like this. Most importantly, aux files (manifest, asmdef) _must be in repo root and have `*.meta` files._
 
