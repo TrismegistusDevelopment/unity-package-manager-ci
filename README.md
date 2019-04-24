@@ -50,4 +50,5 @@ This repo will help you set up CI for separate UPM branch
 7. Commit and push changes
 
 ## Different info
-If your commit doesn't require CI (like readme editing) you can add `[skip ci]` into your commit message and Travis won't build it
+* If your commit doesn't require CI (like readme editing) you can add `[skip ci]` into your commit message and Travis won't build it
+* Unity is not consistent while handling Editor folders in packages during build, so it's mandatory to wrap all editor scripts in
