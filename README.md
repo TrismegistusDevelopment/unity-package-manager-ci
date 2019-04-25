@@ -8,7 +8,7 @@ Travis Ci scripts to push changes to specific branch for using with Unity Packag
 
 
 There's `Packages/manifest.json` in your Unity project folder. You can [manually add](https://docs.unity3d.com/Manual/upm-dependencies.html#Git) `git` dependencies in it like this
-```
+```json
 "com.company.repo.name": "https://YourGitHost.com/UserName/RepoName.git#BranchName"
 ```
 To update asset through UPM you must delete reference in `lock` section in manifest.
@@ -25,7 +25,7 @@ This repo will help you set up CI for separate UPM branch
 ## Add files to repo
 1. Create and push empty branches with desired names, I suggest `upm` and `upm-dev` for `master` and `develop` branches accordingly
 2. In your default branch create `package.json` near your main folder (but inside `Assets`!) with keywords and category of your choice:
-```
+```json
 {
 	"name": "com.company.repo.name",
 	"displayName": "Display Name of Your Asset",
@@ -39,7 +39,7 @@ This repo will help you set up CI for separate UPM branch
 }
 ```
 3. Create `com.company.repo.name.asmdef` in the same folder:
-```
+```json
 {
 	"name": "Display Name of Your Asset"
 }
@@ -51,4 +51,4 @@ This repo will help you set up CI for separate UPM branch
 
 ## Different info
 * If your commit doesn't require CI (like readme editing) you can add `[skip ci]` into your commit message and Travis won't build it
-* Unity is not consistent while handling Editor folders in packages during build, so it's mandatory to wrap all editor scripts in
+* Unity is not consistent while handling Editor folders in packages during build, so it's mandatory to wrap all editor scripts in `#IF UNITY_EDITOR ... #ENDIF` or make [new asmdef file](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html) in every Editor folder with only `Editor` checked in platforms
