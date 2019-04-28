@@ -6,7 +6,7 @@ env:
   - |
       MASTER_TARGET_BRANCH=upm #for master
       DEVELOP_TARGET_BRANCH=upm-dev #for develop
-      TEST_BRANCH=upm_test #for other branches
+      TEST_BRANCH=upm-test #for other branches
       TARGET_BRANCH=not_defined #upm-branch to clone, will be chosen later
       TEST_RUN=false #will be true if branch is not master or develop
       FOLDER_TO_EXPORT=Assets/ParentFolder #parent folder for your root directory
@@ -32,4 +32,6 @@ branches:
   only:
     - master
     - develop
-    #- test_branch
+    - /^(?i:test).*$/
+  except:
+    - /^(?i:upm).*$/

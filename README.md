@@ -23,31 +23,34 @@ This repo will help you set up CI for separate UPM branch
 3. Add variable with exact name `GITHUB_TOKEN` and value from [created token](https://github.com/settings/tokens) with selected scope `repo`
 
 ## Add files to repo
-1. Create and push empty branches with desired names, I suggest `upm` and `upm-dev` for `master` and `develop` branches accordingly
-2. In your default branch create `package.json` near your main folder (but inside `Assets`!) with keywords and category of your choice:
-```json
-{
-	"name": "com.company.repo.name",
-	"displayName": "Display Name of Your Asset",
-	"version": "0.1.1",
-	"unity": "2018.3",
-	"description": "Short description of your asset",
-	"keywords": [
-		"unity", "editor"		
-	],
-	"category": "Instrument"
-}
-```
-3. Create `com.company.repo.name.asmdef` in the same folder:
-```json
-{
-	"name": "Display Name of Your Asset"
-}
-```
-4. Open Unity and make sure that `*.meta` files appeared. You now must have 6 items in your dir: 1 folder, 1 .json, 1 .asmdef and 3 .meta
-5. Copy `.travis.yml` file and `ci` folder to project's root
-6. Edit `.travis.yml`, change env variables - target branches and folder to export. If you want to test this config, add custom test branch to `branches:  only:` section
-7. Commit and push changes
+1. Open your project in Unity
+1. Create `package.json` near your main folder (but inside `Assets`!) with keywords and category of your choice:
+	```json
+	{
+		"name": "com.company.repo.name",
+		"displayName": "Display Name of Your Asset",
+		"version": "0.1.1",
+		"unity": "2018.3",
+		"description": "Short description of your asset",
+		"keywords": [
+			"unity", "editor"		
+		],
+		"category": "Instrument"
+	}
+	```
+1. Create [Assembly definition](https://docs.unity3d.com/Manual/ScriptCompilationAssemblyDefinitionFiles.html) file `com.company.repo.name.asmdef` in the same folder:
+	```json
+	{
+		"name": "Display Name of Your Asset"
+	}
+	```
+	If you have Editor folders, repeat for each:
+	1. Create Assembly definition files with only `editor` platform included
+	1. Add references to other necessary asmdefs
+1. Make sure that `*.meta` files appeared. You now must have 6 items in your dir: 1 folder, 1 .json, 1 .asmdef and 3 .meta
+1. Copy `.travis.yml` file and `ci` folder to project's root
+1. Edit `.travis.yml`, change env variables - target branches and folder to export. If you want to test this config, add custom test branch to `branches:  only:` section
+1. Commit and push changes
 
 ## Different info
 * If your commit doesn't require CI (like readme editing) you can add `[skip ci]` into your commit message and Travis won't build it
