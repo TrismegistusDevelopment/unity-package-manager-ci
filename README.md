@@ -17,6 +17,11 @@ Currently you must follow strict rules if you want to use your asset like this. 
 
 This repo will help you set up CI for separate UPM branch
 
+## Examples
+
+* [Hermesiss/unity-splines](https://github.com/Hermesiss/unity-splines)
+* [vladfaust/unity-wakatime](https://github.com/vladfaust/unity-wakatime)
+
 ## Configure Travis
 1. Register at https://travis-ci.org/ for public or at https://travis-ci.com/ for private repos
 2. Open repo settings, go to `Environment Variables`
